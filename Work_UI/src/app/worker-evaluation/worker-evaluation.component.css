@@ -1,0 +1,37 @@
+.form {
+  min-width: 150px;
+  max-width: 1500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-card {
+  max-width: 1500px;
+}
+
+.center {
+  width: 50%;
+  margin: 50px auto;
+}
+
+.submit-button {
+  margin-top: 20px;
+}
+.icon {
+  font-size: 30px;
+}
+
+.info {
+    width:90%;
+  display: inline-block;
+  margin-left: 15px;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 16px;
+  padding-bottom: 15px;
+  vertical-align: middle;
+  margin-bottom: 0;
+}

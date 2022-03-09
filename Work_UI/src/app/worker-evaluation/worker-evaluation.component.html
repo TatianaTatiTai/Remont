@@ -1,0 +1,52 @@
+<app-worker-nav>
+  <mat-card class="profile-card center" *ngIf="evaluations">
+
+    <mat-card-header>
+      <mat-card-title>Данные о масштабе выполняемых работ</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <div class="icon">
+          <mat-icon [inline]="true">gavel</mat-icon> <p class="info">{{evaluations.Evaluation}}</p>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+
+      <div>
+        <div class="icon">
+          <mat-icon [inline]="true">calendar_today</mat-icon> <p class="info">Дата выезда: {{evaluations.DateEvaluation | dateFormatPipe}}</p>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="form-card center" *ngIf="!evaluations">
+    <mat-card-header>
+      <mat-card-title>Данные о масштабе выполняемых работ</mat-card-title>
+    </mat-card-header>
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)"
+                 size="medium"
+                 color="#ffffff"
+                 type="line-spin-fade">
+    </ngx-spinner>
+
+    <form class="form ng-pristine ng-untouched ng-valid" #newForm="ngForm" novalidate="">
+
+      <div class="form-group">
+
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Размеры работ" [(ngModel)]="evaluation.Evaluation" name="Evaluation" required></textarea>
+        </mat-form-field>
+
+      </div>
+
+      <div style="display:inline-block">
+        <button mat-raised-button color="primary" [disabled]="!newForm.valid" (click)="OnSubmit()">Добавить</button>
+      </div>
+
+    </form>
+
+
+  </mat-card>
+</app-worker-nav>

@@ -1,0 +1,35 @@
+<div [ngSwitch]="data.type">
+  <ng-template ngSwitchCase="question"><h2 mat-dialog-title>Сохранение карточки</h2>
+    <mat-dialog-content class="mat-typography">
+      <h3>Вы уверены что работа с карточкой закончена и Вы хотите ее сохранить?</h3>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>Нет</button>
+      <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Да</button>
+    </mat-dialog-actions>
+  </ng-template>
+  <ng-template ngSwitchCase="attention">
+    <h2 mat-dialog-title>Прикрепление текстов</h2>
+    <mat-dialog-content class="mat-typography">
+      <h3>Вы не прикрепили тексты. Сохранение карточки без текстов невозможно</h3>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>Ок</button>
+    </mat-dialog-actions>
+  </ng-template>
+  <ng-template ngSwitchCase="validateAttention">
+      <h2 mat-dialog-title>Проверка формы</h2>
+      <mat-dialog-content class="mat-typography">
+        <h3>Форма документа содержит ошибки или не заполненные поля. Пожайлуйста перепроверьте.</h3>
+      </mat-dialog-content>
+      <mat-dialog-actions>
+        <button mat-button mat-dialog-close>Ок</button>
+      </mat-dialog-actions>
+    </ng-template>
+  <ng-template ngSwitchCase="error">
+    <h2 mat-dialog-title>Ошибка при сохранении текстов</h2>
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>Ок</button>
+    </mat-dialog-actions>
+  </ng-template>
+</div>

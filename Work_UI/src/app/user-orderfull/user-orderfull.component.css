@@ -1,0 +1,31 @@
+.form {
+  min-width: 150px;
+  max-width: 1500px;
+  width: 100%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.form-card {
+  max-width: 1500px;
+}
+
+.center {
+  width: 70%;
+  margin: 50px auto;
+}
+
+.submit-button {
+  margin-top: 20px;
+}
+
+.info {
+  padding: 20px;
+  background-color: #FFF8DC;
+  border-radius: 5px;
+}
+p{
+    margin-bottom:4px
+}

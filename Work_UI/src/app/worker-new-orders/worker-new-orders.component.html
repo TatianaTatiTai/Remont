@@ -1,0 +1,35 @@
+<app-worker-nav>
+  <mat-card class="form-card center">
+    <h1>Новые заявки</h1>
+    <table class="table table-striped" style="text-align:center">
+      <thead>
+        <tr>
+          <td>ФИО</td>
+          <td>Телефон</td>
+          <td>Описание</td>
+          <td>Выезд мастера</td>
+          <td>Статус</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of neworders">
+          <td>{{order.Fio}}</td>
+          <td>{{order.Phone}}</td>
+          <td>{{order.Description}}</td>
+          <td *ngIf="order.NeedEvaluation == '0'">Нет</td>
+          <td *ngIf="order.NeedEvaluation == '1'">Да</td>
+          <td>{{order.Status}}</td>
+
+          <td  style="width: 150px; text-align: center;">
+            <input *ngIf="order.NeedEvaluation == '1'" type="button" value="Выезд мастера" (click)="evaluation(order.Id)" class="btn btn-primary button" />
+            <input type="button" value="В обработку" (click)="processingOrder(order.Id)" class="btn btn-success button" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </mat-card>
+</app-worker-nav>
+

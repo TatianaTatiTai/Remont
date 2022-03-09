@@ -1,0 +1,30 @@
+<app-main-nav>
+  <mat-card class="form-card center">
+    <mat-card-header>
+      <mat-card-title>Заявка на выполнение ремонтных работ</mat-card-title>
+    </mat-card-header>
+    <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)"
+                 size="medium"
+                 color="#ffffff"
+                 type="line-spin-fade">
+    </ngx-spinner>
+
+    <form class="form ng-pristine ng-untouched ng-valid" #newForm="ngForm" novalidate="">
+
+      <div class="form-group">
+
+
+        <mat-form-field class="full-width">
+          <textarea matInput placeholder="Описание ниобходимых работ" [(ngModel)]="order.Description" name="Description" required></textarea>
+        </mat-form-field>
+      </div>
+
+      <div style="display:inline-block">
+        <button mat-raised-button color="primary" [disabled]="!newForm.valid" (click)="OnSubmit()">Отправить</button>
+      </div>
+
+    </form>
+
+   
+  </mat-card>
+</app-main-nav>

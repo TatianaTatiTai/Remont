@@ -1,0 +1,67 @@
+<app-worker-nav>
+  <mat-card class="form-card center" *ngIf="materialOrder">
+    <h2>Полная смета </h2>
+
+    <div class="info">
+
+      <h4 style="font-style:italic; text-align:center">Закупка материалов</h4>
+      <div *ngFor="let item of materialOrder" class="table-striped">
+        <p>Материал: <span style="font-weight:500; font-style:italic">{{item.Material.Material}} {{item.Material.Description}} </span> </p>
+        <p>Производитель: <span style="font-weight:500; font-style:italic">{{item.Material.Manufacturer}} </span> </p>
+        <p>Количество: <span style="font-weight:500; font-style:italic">{{item.Amount}}шт.</span> </p>
+        <p>Стоимость: <span style="font-weight:500; font-style:italic">{{item.Cost}}р.</span></p>
+        <hr>
+      </div>
+      <p>ИТОГО: <span style="font-weight:500; font-style:italic">{{sumMat}}р.</span></p>
+    </div>
+    <div class="info">
+
+      <h4 style="font-style:italic; text-align:center">Выполняемые работы</h4>
+      <div *ngFor="let item of worktypeOrder" class="table-striped">
+        <p>Материал: <span style="font-weight:500; font-style:italic">{{item.WorkType.WorkType}}</span> </p>
+        <p>Стоимость: <span style="font-weight:500; font-style:italic">{{item.Cost}}р.</span></p>
+        <hr>
+      </div>
+      <p>ИТОГО: <span style="font-weight:500; font-style:italic">{{sumWorkT}}р.</span></p>
+    </div>
+    <div class="info">
+
+      <h4 style="font-style:italic; text-align:center">Стоимость услуг рабочих</h4>
+      <div *ngFor="let item of workerCost" class="table-striped">
+        <p>Количество рабочих в бригаде: <span style="font-weight:500; font-style:italic">{{item.WorkersNumber}} человек</span> </p>
+        <p>Стоимость: <span style="font-weight:500; font-style:italic">{{item.Cost}}р.</span></p>
+        <hr>
+      </div>
+      <p>ИТОГО: <span style="font-weight:500; font-style:italic">{{sumCost}}р.</span></p>
+    </div>
+    <div class="info">
+      <h4 style="font-style:italic; text-align:center">Документы заявки</h4>
+      <mat-list>
+        <mat-list-item *ngFor="let item of textInfo; let i = index">
+          <mat-icon mat-list-icon>insert_drive_file</mat-icon>
+          <h4 mat-line>{{item.Name}}</h4>
+          <button matTooltip="Скачать документ" mat-icon-button (click)="downloadTextById(item.Id)">
+            <mat-icon>get_app</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </div>
+
+    <div>
+      <file-drop headertext="Поле для файлов (перетяните нужные файлы сюда)" (onFileDrop)="dropped($event)"></file-drop>
+      <mat-list>
+        <h3 mat-subheader>Прикрепленные файлы</h3>
+        <mat-list-item *ngFor="let item of files">
+          <mat-icon mat-list-icon>attachment</mat-icon>
+          <h4 mat-line>{{item.relativePath}}</h4>
+          <button mat-button type="button" *ngIf="item.relativePath" matSuffix mat-icon-button aria-label="Clear" (click)="deleteFileItem(item)">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div class="form-group">
+      <button mat-raised-button color="primary" class="submit-button" (click)="SaveDocument()">Добавить</button>
+    </div>
+  </mat-card>
+</app-worker-nav>

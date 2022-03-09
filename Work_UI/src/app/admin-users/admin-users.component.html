@@ -1,0 +1,32 @@
+<app-admin-nav>
+  <mat-card class="form-card center">
+    <h1>Список пользователей</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr class="head">
+          <td>Имя</td>
+          <td>Фамилия</td>
+          <td>Логин</td>
+          <td>Почта</td>
+          <td>Роль</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.Name}}</td>
+          <td>{{user.Surname}}</td>
+          <td>{{user.UserName}}</td>
+          <td>{{user.Email}}</td>
+          <td>{{user.RoleName}}</td>
+        
+          <td>
+            <input *ngIf="user.RoleName == 'Сотрудник компании'" type="button" value="Удалить" (click)="deleteUser(user.Id)" class="btn btn-danger" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </mat-card>
+</app-admin-nav>

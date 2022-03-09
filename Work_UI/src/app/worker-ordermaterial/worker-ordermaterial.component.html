@@ -1,0 +1,82 @@
+<app-worker-nav>
+  <mat-card class="profile-card center" *ngIf="evaluations">
+
+    <mat-card-header>
+      <mat-card-title>Данные о масштабе выполняемых работ</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <div class="icon">
+          <mat-icon [inline]="true">gavel</mat-icon> <p class="info">{{evaluations.Evaluation}}</p>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+
+      <div>
+        <div class="icon">
+          <mat-icon [inline]="true">calendar_today</mat-icon> <p class="info">Дата выезда: {{evaluations.DateEvaluation | dateFormatPipe}}</p>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="form-card center">
+    <form #materialForm="ngForm" class="form-card ">
+      <mat-form-field class="input-width">
+        <mat-select placeholder="Материал" name="IdMaterial" [(ngModel)]="newMaterial.IdMaterial" #id="ngModel" required>
+          <mat-option *ngFor="let materials of material" [value]="materials.Id">
+            {{materials.Material}}
+            {{materials.Manufacturer}}
+            {{materials.Description}}
+          </mat-option>
+        </mat-select>
+        <div [hidden]="id.valid || id.untouched" class="alert alert-danger">
+          Не выбран материал
+        </div>
+      </mat-form-field>
+      <mat-form-field class="input-width">
+        <input matInput [(ngModel)]="newMaterial.Amount" name="Amount" placeholder="Количество" required>
+      </mat-form-field>
+
+      <div style="display:inline-block">
+        <button mat-raised-button color="primary" [disabled]="!materialForm.valid" (click)="AddMaterial(newMaterial.IdMaterial, newMaterial.Amount)">
+          Добавить
+        </button>
+      </div>
+
+    </form>
+    <h1>Материалы в заказе</h1>
+    <table class="table table-striped" style="text-align:center">
+      <thead>
+        <tr class="head">
+          <td>Id</td>
+          <td>Материал</td>
+          <td>Количество</td>
+          <td>Цена</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tempResult$ | async">
+          <td>{{item.Id}}</td>
+          <td>{{item.Material.Material}} {{item.Material.Description}}, {{item.Material.Manufacturer}} </td>
+          <td>{{item.Amount}}</td>
+          <td>{{item.Cost}}</td>
+          <td>
+            <input type="button" value="Удалить" (click)="deleteOrderMaterial(item.Id)" class="btn btn-danger" />
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+    <mat-paginator [length]="length"
+                   [pageSize]="pageSize"
+                   [pageIndex]="pageIndex"
+                   [pageSizeOptions]="[10, 15]"
+                   (page)="pageEvent = changePageEvent($event)">
+    </mat-paginator>
+
+  </mat-card>
+</app-worker-nav>
+

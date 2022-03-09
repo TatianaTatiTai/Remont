@@ -1,0 +1,44 @@
+<app-admin-nav>
+  <mat-card class="form-card center">
+    <form #workTyopeForm="ngForm" class="form-card ">
+      <mat-form-field class="input-width">
+        <input matInput [(ngModel)]="newWorkType.WorkType" name="WerkType" placeholder="Вид работ" required>
+      </mat-form-field>
+      <mat-form-field class="input-width">
+        <input matInput [(ngModel)]="newWorkType.OneCost" name="OneCost" placeholder="Цена за ед" required>
+      </mat-form-field>
+      <div style="display:inline-block">
+        <button mat-raised-button color="primary" [disabled]="!workTyopeForm.valid" (click)="AddWorkType()">
+          Добавить
+        </button>
+      </div>
+
+    </form>
+    <h1>Виды работ</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr class="head">
+          <td>Id</td>
+          <td>Вид работ</td>
+          <td>Цена за ед.</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tempResult$ | async">
+          <td>{{item.Id}}</td>
+          <td>{{item.WorkType}}</td>
+          <td>{{item.OneCost}}</td>
+        </tr>
+      </tbody>
+
+    </table>
+    <mat-paginator [length]="length"
+                   [pageSize]="pageSize"
+                   [pageIndex]="pageIndex"
+                   [pageSizeOptions]="[10, 15]"
+                   (page)="pageEvent = changePageEvent($event)">
+    </mat-paginator>
+
+  </mat-card>
+</app-admin-nav>
+

@@ -1,0 +1,38 @@
+<app-main-nav>
+  <mat-card class="form-card center">
+    <h1>Мои заявки</h1>
+    <table class="table table-striped" style="text-align:center">
+      <thead>
+        <tr>
+          <td>ФИО</td>
+          <td>Телефон</td>
+          <td>Описание</td>
+          <td>Выезд мастера</td>
+          <td>Статус</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{order.Fio}}</td>
+          <td>{{order.Phone}}</td>
+          <td>{{order.Description}}</td>
+          <td *ngIf="order.NeedEvaluation == '0'">Нет</td>
+          <td *ngIf="order.NeedEvaluation == '1'">Да</td>
+          <td>{{order.Status}}</td>
+
+          <td style="width:150px">
+            <input *ngIf="order.Status == 'Новая'" type="button" value="Удалить" (click)="deleteOrder(order.Id, order.Status)" class="btn btn-danger button" />
+            <input *ngIf="order.Status != 'Новая'" type="button" value="Смета" (click)="orderFull(order.Id)" class="btn btn-dark button" />
+            <input *ngIf="order.Status == 'Ожидает подтверждения'" type="button" value="Подтвердить" (click)="approveOrder(order.Id)" class="btn btn-success button" />
+            <input *ngIf="order.Status == 'Ожидает подтверждения'" type="button" value="Отказаться" (click)="rejectOrder(order.Id)" class="btn btn-danger button" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </mat-card>
+</app-main-nav>
+

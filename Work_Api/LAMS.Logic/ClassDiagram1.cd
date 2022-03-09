@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LAMS.Logic.Mappings.Admin.MaterialProfile">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappings\Admin\MaterialProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LAMS.Logic.Mappings.Admin.WorkTypeProfile">
+    <Position X="4.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappings\Admin\WorkTypeProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LAMS.Logic.Mappings.Users.UserProfile">
+    <Position X="2.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappings\Users\UserProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LAMS.Logic.Mappings.Work.DocumentProfile">
+    <Position X="1" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappings\Work\DocumentProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LAMS.Logic.Mappings.Work.EvaluationProfile">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappings\Work\EvaluationProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LAMS.Logic.Mappings.Work.OrderMaterialProfile">
+    <Position X="1" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappings\Work\OrderMaterialProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LAMS.Logic.Mappings.Work.OrderProfile">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappings\Work\OrderProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LAMS.Logic.Mappings.Work.OrderWorkerCostProfile">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappings\Work\OrderWorkerCostProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LAMS.Logic.Mappings.Work.OrderWorkTypeProfile">
+    <Position X="1" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Mappings\Work\OrderWorkTypeProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LAMS.Logic.Services.Admin.AdminService" BaseTypeListCollapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAACAABQAAAABAAAAAAAAABAggAAAA=</HashCode>
+      <FileName>Services\Admin\AdminService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LAMS.Logic.Services.Users.RegistrationService" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIACAEAAAAAAABQAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Users\RegistrationService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LAMS.Logic.Services.Users.UserService" BaseTypeListCollapsed="true">
+    <Position X="10.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAACAACAkAAAAAAABQAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\Users\UserService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LAMS.Logic.Services.Work.WorkService" BaseTypeListCollapsed="true">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAgACAAAAAAAAABQgAAAAAAgAAAgAABAgAAAAA=</HashCode>
+      <FileName>Services\Work\WorkService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LAMS.Logic.Services.Worker.WorkerService" BaseTypeListCollapsed="true">
+    <Position X="14" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAIIAIEACAsABYgDAIBRAAAkCgIUAAAAgABAgARAAA=</HashCode>
+      <FileName>Services\Worker\WorkerService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="LAMS.Logic.Common.Models.Admin.MaterialBLL">
+    <Position X="10.5" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LAMS.Logic.Common.Models.Admin.WorkTypeBLL">
+    <Position X="8.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LAMS.Logic.Common.Models.Users.RoleBLL">
+    <Position X="10.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LAMS.Logic.Common.Models.Users.User">
+    <Position X="12.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LAMS.Logic.Common.Models.Work.DocumentBLL">
+    <Position X="7" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LAMS.Logic.Common.Models.Work.EvaluationBLL">
+    <Position X="8.75" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LAMS.Logic.Common.Models.Work.OrderBLL">
+    <Position X="12.25" Y="4" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LAMS.Logic.Common.Models.Work.OrderMaterialBLL">
+    <Position X="7" Y="6.75" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LAMS.Logic.Common.Models.Work.OrderWorkerCostBLL">
+    <Position X="8.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Class Name="LAMS.Logic.Common.Models.Work.OrderWorkTypeBLL">
+    <Position X="10.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier />
+  </Class>
+  <Interface Name="LAMS.Logic.Common.Services.Admin.IAdminService">
+    <Position X="1" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="LAMS.Logic.Common.Services.Users.IRegistrationService">
+    <Position X="2.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="LAMS.Logic.Common.Services.Users.IUserService">
+    <Position X="2.75" Y="7" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="LAMS.Logic.Common.Services.Work.IWorkService">
+    <Position X="1" Y="7.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Interface Name="LAMS.Logic.Common.Services.Worker.IWorkerService">
+    <Position X="4.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier />
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

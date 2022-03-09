@@ -1,0 +1,83 @@
+<app-worker-nav>
+  <mat-card class="profile-card center" *ngIf="evaluations">
+
+    <mat-card-header>
+      <mat-card-title>Данные о масштабе выполняемых работ</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <div class="icon">
+          <mat-icon [inline]="true">gavel</mat-icon> <p class="info">{{evaluations.Evaluation}}</p>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+
+      <div>
+        <div class="icon">
+          <mat-icon [inline]="true">calendar_today</mat-icon> <p class="info">Дата выезда: {{evaluations.DateEvaluation | dateFormatPipe}}</p>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="form-card center">
+    <form #materialForm="ngForm" class="form-card ">
+      <mat-form-field class="input-width">
+        <mat-select placeholder="Размер бригады" name="WorkersNumber" [(ngModel)]="newWorkerCost.WorkersNumber" #id="ngModel" required>
+          <mat-option value="1">1</mat-option>
+          <mat-option value="2">2</mat-option>
+          <mat-option value="3">3</mat-option>
+          <mat-option value="4">4</mat-option>
+          <mat-option value="5">5</mat-option>
+          <mat-option value="6">6</mat-option>
+          <mat-option value="7">7</mat-option>
+          <mat-option value="8">8</mat-option>
+        </mat-select>
+        <div [hidden]="id.valid || id.untouched" class="alert alert-danger">
+          Не выбрано количество человек
+        </div>
+      </mat-form-field>
+      <mat-form-field class="input-width">
+        <input matInput [(ngModel)]="newWorkerCost.Cost" name="Cost" placeholder="Цена" required>
+      </mat-form-field>
+
+      <div style="display:inline-block">
+        <button mat-raised-button color="primary" [disabled]="!materialForm.valid" (click)="AddWorkerCost()">
+          Добавить
+        </button>
+      </div>
+
+    </form>
+    <h1>Количество рабочих в заказе</h1>
+    <table class="table table-striped" style="text-align:center">
+      <thead>
+        <tr class="head">
+          <td>Id</td>
+          <td>Количество рабочих</td>
+          <td>Цена</td>
+          <td></td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of tempResult$ | async">
+          <td>{{item.Id}}</td>
+          <td>{{item.WorkersNumber}} человек</td>
+          <td>{{item.Cost}}</td>
+          <td>
+            <input type="button" value="Удалить" (click)="deleteWorkerCost(item.Id)" class="btn btn-danger" />
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+    <mat-paginator [length]="length"
+                   [pageSize]="pageSize"
+                   [pageIndex]="pageIndex"
+                   [pageSizeOptions]="[10, 15]"
+                   (page)="pageEvent = changePageEvent($event)">
+    </mat-paginator>
+
+  </mat-card>
+</app-worker-nav>
+
