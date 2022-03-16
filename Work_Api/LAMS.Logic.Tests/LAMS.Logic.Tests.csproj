@@ -94,8 +94,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ErrorLog\ErrorLogUnitTest.cs" />
+    <Compile Include="Moqs\AdminRepositoryMoq.cs" />
+    <Compile Include="Moqs\AdminServiceMoq.cs" />
+    <Compile Include="Moqs\WorkRepositoryMoq.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SMTP\SMTPClientTest.cs" />
+    <Compile Include="ServiceTests\AdminServiceTests.cs" />
+    <Compile Include="ServiceTests\WorkServiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

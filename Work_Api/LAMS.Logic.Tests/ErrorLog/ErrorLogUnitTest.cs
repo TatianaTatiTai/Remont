@@ -57,8 +57,8 @@ namespace LAMS.Logic.Tests.ErrorLog
                 var builder = new ProxyGenerator();
                 var test = new Test();
                 return builder.CreateInterfaceProxyWithTarget<ITest>(
-                    test,
-                    new ErrorLogInterceptor(ctx.Kernel.Get<IErrorLogService>()));
+                test,
+                new ErrorLogInterceptor(ctx.Kernel.Get<IErrorLogService>()));
             });
 
             Assert.Throws<StackOverflowException>(() => kernel.Get<ITest>().MethodThrowsException3());
